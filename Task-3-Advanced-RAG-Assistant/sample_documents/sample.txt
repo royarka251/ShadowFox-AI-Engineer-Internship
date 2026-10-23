@@ -1,0 +1,10 @@
+
+Advanced RAG Assistant Sample Document
+
+Retrieval-Augmented Generation (RAG) searches relevant information
+from documents before preparing a response.
+
+Document ingestion extracts text from supported files.
+Chunking splits large text into smaller sections.
+Retrieval finds sections relevant to the user's question.
+Grounded responses use retrieved content rather than unsupported claims.

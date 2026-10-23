@@ -1,26 +1,54 @@
-# Task 3: Advanced RAG Assistant
+# ShadowFox AI Engineer Internship
+## Task 3: Advanced RAG Document Assistant
 
-## Overview
-An Advanced Retrieval-Augmented Generation (RAG) Assistant developed as part of the ShadowFox AI Engineer Internship.
+A document question-answering application designed to retrieve relevant
+information from uploaded PDF, TXT, and Markdown files.
 
-## Components
-- FastAPI backend
-- PDF, TXT and Markdown document ingestion
+### Planned Features
+- Multi-format document ingestion
 - Text extraction and chunking
-- Retrieval and document-grounded question answering
-- Lightweight Gradio interface for document search
+- Embedding generation and vector search
+- Document-grounded question answering
+- Retrieved source context and relevance scores
+- FastAPI backend and Streamlit user interface
+- Input validation and reproducible setup
 
-## Project Structure
-The project contains the API modules, user interface, dependency list and Docker configuration where applicable.
+### Project Structure
+```text
+Task-3-Advanced-RAG-Assistant/
+├── api/
+│   ├── __init__.py
+│   ├── ingestion.py
+│   ├── vector_store.py
+│   ├── qa.py
+│   ├── main.py
+│   └── ui.py
+├── requirements.txt
+├── README.md
+├── Dockerfile
+└── tests/
+```
 
-## Running the Project
-Install the dependencies listed in `requirements.txt` and follow the setup instructions for the relevant application.
+### Installation
+```bash
+pip install -r requirements.txt
+```
 
-## Testing
-Document upload, retrieval and question-answering should be tested before marking the project complete.
+### Running the Application
+Start the FastAPI backend:
+```bash
+uvicorn api.main:app --reload
+```
 
-## Screenshots
-Application screenshots and test results will be added here.
+Start the Streamlit interface in a separate terminal:
+```bash
+streamlit run api/ui.py
+```
 
-## Limitations
-The Lite interface currently performs keyword-based matching. It is a simplified demo and does not independently provide a complete embedding-based RAG pipeline.
+### Testing
+Test document upload, retrieval, question answering, source display,
+invalid file handling, and questions unsupported by the document.
+
+### Notes
+The actual implemented features and configuration should be verified
+before deployment. Localhost URLs require a running backend.
